@@ -7,11 +7,8 @@ export const Menu = () => {
       <img src={Logo} alt='Logo Casa Verde' />
 
       <div>
-        <a href=''>Como fazer</a>
-        <a href=''>Ofertas</a>
-        <a href=''>Depoimentos</a>
-        <a href=''>Vídeos</a>
-        <a href=''>Meu Carrinho</a>
+        <a href='#'>Como fazer</a>/<a href='#'>Ofertas</a>/<a href='#'>Depoimentos</a>/<a href='#'>Vídeos</a>/
+        <a href='#'>Meu Carrinho</a>
       </div>
     </Container>
   );

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { Details } from './components/Details';
 import { Menu } from './components/Menu';
+import { Newsletter } from './components/Newsletter';
 
 const Container = styled.div`
   width: 100%;
@@ -12,7 +14,8 @@ function App() {
   return (
     <Container>
       <Menu />
-      Hello World
+      <Newsletter />
+      <Details />
     </Container>
   );
 }
