@@ -37,8 +37,8 @@ export const Newsletter = () => {
             }
           );
 
-          console.log(result.text);
           setEmail('');
+          console.log(result.text);
         }, 1000);
       })
       .catch((err) => {
@@ -47,7 +47,7 @@ export const Newsletter = () => {
           toast.error(`Error ${err.status}`, {
             id: 'mail',
           });
-        }, 1500);
+        }, 1000);
       });
   };
 

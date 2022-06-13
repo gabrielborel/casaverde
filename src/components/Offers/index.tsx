@@ -1,8 +1,26 @@
 import { Container } from './styles';
 import Planta from '../../assets/Planta.svg';
 import Seta from '../../assets/seta.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export const Offers = () => {
+  const [data, setData] = useState('');
+
+  const fetchData = async () => {
+    const response = await axios.get(
+      'https://gist.githubusercontent.com/bugan/41d60ffa23fa0c4044cc138bf670780d/raw'
+    );
+
+    setData(response.data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(data);
+
   return (
     <Container>
       <div>
