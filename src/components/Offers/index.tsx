@@ -9,7 +9,7 @@ export const Offers = () => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      'https://gist.githubusercontent.com/bugan/41d60ffa23fa0c4044cc138bf670780d/raw'
+      'https://my-json-server.typicode.com/gabrielborel/casaverde/products'
     );
 
     setData(response.data);

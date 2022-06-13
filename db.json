@@ -3,20 +3,38 @@
     {
        "name":"Ajuga Reptans",
        "preco":20,
-       "img":"ajuga01_card",
-       "ordem":0
+       "img":"AjugaReptans",
+       "quantidade":4
     },
     {
        "name":"Cordyline fruticosa",
        "preco":35,
-       "img":"fruticosa01_card",
-       "ordem":3
+       "img":"CordylineFruticosa",
+       "quantidade":3
     },
     {
        "name":"Crassula ovata",
        "preco":23.2,
-       "img":"ovata01_card",
-       "ordem":2
-    }
+       "img":"CrassulaOvata",
+       "quantidade":2
+    },
+    {
+      "name":"Datura metel",
+      "preco":25.0,
+      "img":"DaturaMetel",
+      "quantidade":2
+   },
+   {
+    "name":"Daleira odorata",
+    "preco":26.0,
+    "img":"DaleiraOdorata",
+    "quantidade":2
+   },
+   {
+    "name":"Cyperus rotundus",
+    "preco":28.0,
+    "img":"CyperusRotundus",
+    "quantidade":2
+   }
   ]
 }
