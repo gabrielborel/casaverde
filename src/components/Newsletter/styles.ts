@@ -52,6 +52,7 @@ export const Container = styled.div`
       }
 
       input {
+        font-size: 16px;
         padding-left: 50px;
         width: 300px;
         opacity: 0.6;

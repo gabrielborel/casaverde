@@ -1,26 +1,54 @@
-import { FormEvent, useRef, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Container } from './styles';
 import Blob from '../../assets/Blob.svg';
 import { HiOutlineMail } from 'react-icons/hi';
 import HeroImage from '../../assets/HeroImage.png';
 import toast from 'react-hot-toast';
-import { sendMail } from '../../services/mailService';
+import emailjs from 'emailjs-com';
 
 export const Newsletter = () => {
   const [email, setEmail] = useState('');
-  const form = useRef();
 
-  const submitEmailToNewsletter = (e: FormEvent) => {
+  const handleSubmitEmailToNewsletter = async (e: FormEvent) => {
     e.preventDefault();
+    if (!email) return;
 
-    toast.success(`Obrigado pela sua assinatura!\n\nVocê receberá novidades no e-mail: ${email}`, {
-      duration: 4000,
-      style: {
-        textAlign: 'center',
-      },
+    toast.loading('Carregando ...', {
+      id: 'mail',
     });
 
-    sendMail(e);
+    emailjs
+      .sendForm(
+        'gmail',
+        'template_hmdrkqj',
+        e.currentTarget as HTMLFormElement,
+        'zCACRpVEMbAgjZM5i'
+      )
+      .then((result) => {
+        setTimeout(() => {
+          toast.success(
+            `Obrigado pela sua assinatura!\n\nVocê receberá novidades no e-mail: ${email}`,
+            {
+              id: 'mail',
+              duration: 4000,
+              style: {
+                textAlign: 'center',
+              },
+            }
+          );
+
+          console.log(result.text);
+          setEmail('');
+        }, 1000);
+      })
+      .catch((err) => {
+        setTimeout(() => {
+          console.log(err);
+          toast.error(`Error ${err.status}`, {
+            id: 'mail',
+          });
+        }, 1500);
+      });
   };
 
   return (
@@ -38,11 +66,12 @@ export const Newsletter = () => {
           novidades da marca.
         </p>
 
-        <form onSubmit={submitEmailToNewsletter}>
+        <form onSubmit={handleSubmitEmailToNewsletter}>
           <HiOutlineMail className='icon' />
           <input
             type='email'
             placeholder='Insira seu e-mail'
+            value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
           <button type='submit'>Assinar newsletter</button>
