@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   margin-top: 11rem;
-  border-radius: 5px;
   max-width: 900px;
   margin: 11rem auto 0;
 
@@ -11,12 +10,16 @@ export const Container = styled.div`
     height: 350px;
     width: 500px;
     object-fit: cover;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
   > div {
     flex: 1;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 40px 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     p {
       opacity: 0.6;

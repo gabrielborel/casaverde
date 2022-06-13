@@ -6,22 +6,17 @@ export const Details = () => {
   return (
     <Container>
       <img src={Image} alt='' />
+
       <div>
         <p>Como conseguir</p>
         <strong>minha planta</strong>
 
-        <div>
-          <img src={Ellipse} alt='' />
-          <p>Escolha suas plantas</p>
-        </div>
-        <div>
-          <img src={Ellipse} alt='' />
-          <p>Faça seu pedido</p>
-        </div>
-        <div>
-          <img src={Ellipse} alt='' />
-          <p>Aguarde na sua casa</p>
-        </div>
+        {['Escolha suas plantas', 'Faça seu pedido', 'Aguarde na sua casa'].map((text, index) => (
+          <div key={index}>
+            <img src={Ellipse} alt='' />
+            <p>{text}</p>
+          </div>
+        ))}
       </div>
     </Container>
   );
